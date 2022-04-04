@@ -1,5 +1,6 @@
 package tech.kisin.everydayningning.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import tech.kisin.everydayningning.dto.PhotoDTO;

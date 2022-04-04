@@ -6,6 +6,7 @@ import tech.kisin.everydayningning.dataobject.Photo;
 import tech.kisin.everydayningning.dto.PhotoDTO;
 import tech.kisin.everydayningning.po.PhotoPO;
 import tech.kisin.everydayningning.service.NingNingService;
+import tech.kisin.everydayningning.service.PhotoService;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,20 +17,16 @@ import java.util.Random;
 public class NingNingServiceImpl implements NingNingService {
 
     private final Random random = new Random();
-    private final PhotoRepository photoRepository;
 
-    public NingNingServiceImpl(PhotoRepository photoRepository) {
-        this.photoRepository = photoRepository;
+    private final PhotoService photoService;
+
+    public NingNingServiceImpl(PhotoService photoService) {
+        this.photoService = photoService;
     }
 
     @Override
     public PhotoDTO getRandomPhoto() {
-        List<PhotoPO> list = photoRepository.findAll();
-        PhotoPO photoPO = list.get(random.nextInt(list.size()));
-        Photo photo = new Photo(
-                photoPO.getFilename(),
-                photoPO.getDescription()
-        );
+        Photo photo = photoService.getRandomPhoto();
         return new PhotoDTO(photo.getFilename(), photo.getDescription());
     }
 }

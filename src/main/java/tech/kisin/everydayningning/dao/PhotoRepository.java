@@ -7,5 +7,6 @@ import java.util.List;
 
 @Mapper
 public interface PhotoRepository {
-    List<PhotoPO> findAll();
+    long count();
+    PhotoPO findByIndex(long index);
 }
