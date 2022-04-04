@@ -1,15 +1,22 @@
-package tech.kisin.everydayningning.dataobject;
+package tech.kisin.everydayningning.po;
 
-public class Photo {
-    String filename;
-    String description;
+public class PhotoPO {
+    private Long id;
+    private String filename;
+    private String description;
 
-    public Photo() {
-    }
-
-    public Photo(String filename, String description) {
+    public PhotoPO(Long id, String filename, String description) {
+        this.id = id;
         this.filename = filename;
         this.description = description;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFilename() {

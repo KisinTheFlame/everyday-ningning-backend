@@ -4,5 +4,4 @@ import tech.kisin.everydayningning.dto.PhotoDTO;
 
 public interface NingNingService {
     PhotoDTO getRandomPhoto();
-    byte[] ningningRandom();
 }

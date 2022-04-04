@@ -1,14 +1,11 @@
 package tech.kisin.everydayningning.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import tech.kisin.everydayningning.dataobject.Photo;
+import org.apache.ibatis.annotations.Mapper;
+import tech.kisin.everydayningning.po.PhotoPO;
 
 import java.util.List;
 
-public interface PhotoRepository extends JpaRepository<Photo, Long> {
-    @Override
-    long count();
-
-    @Override
-    List<Photo> findAll();
+@Mapper
+public interface PhotoRepository {
+    List<PhotoPO> findAll();
 }
