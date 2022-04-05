@@ -1,17 +1,18 @@
-package tech.kisin.everydayningning.entity;
+package tech.kisin.everydayningning.po;
 
-public class Photo {
+public class MusicPO {
+    private final long id;
     private String filename;
-    private String description;
     private int frequency;
 
-    public Photo() {
+    public MusicPO(long id, String filename, int frequency) {
+        this.id = id;
+        this.filename = filename;
+        this.frequency = frequency;
     }
 
-    public Photo(String filename, String description, int frequency) {
-        this.filename = filename;
-        this.description = description;
-        this.frequency = frequency;
+    public long getId() {
+        return id;
     }
 
     public String getFilename() {
@@ -20,14 +21,6 @@ public class Photo {
 
     public void setFilename(String filename) {
         this.filename = filename;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public int getFrequency() {

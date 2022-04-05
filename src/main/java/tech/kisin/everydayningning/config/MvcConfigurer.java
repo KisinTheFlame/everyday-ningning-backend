@@ -12,6 +12,9 @@ public class MvcConfigurer implements WebMvcConfigurer {
         registry
                 .addResourceHandler("/ning/**")
                 .addResourceLocations("file:/resource/ning/");
+        registry
+                .addResourceHandler("/ning-music/**")
+                .addResourceLocations("file:/resource/ning-music");
     }
 
     @Override

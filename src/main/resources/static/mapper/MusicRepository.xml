@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tech.kisin.everydayningning.dao.MusicRepository">
+    <select id="getAllFilename" resultType="java.lang.String">
+        SELECT filename
+        FROM music
+    </select>
+    <select id="getByKeywordInexactly" resultType="PhotoPO">
+        SELECT *
+        FROM music
+        WHERE filename LIKE '%#{keyword}%'
+    </select>
+    <update id="countUpFrequency">
+        UPDATE music
+        SET frequency = frequency + 1
+        WHERE filename = #{id}
+    </update>
+</mapper>

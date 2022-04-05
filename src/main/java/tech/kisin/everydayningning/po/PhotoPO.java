@@ -4,11 +4,13 @@ public class PhotoPO {
     private Long id;
     private String filename;
     private String description;
+    private int frequency;
 
-    public PhotoPO(Long id, String filename, String description) {
+    public PhotoPO(Long id, String filename, String description, int frequency) {
         this.id = id;
         this.filename = filename;
         this.description = description;
+        this.frequency = frequency;
     }
 
     public Long getId() {
@@ -33,5 +35,13 @@ public class PhotoPO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(int frequency) {
+        this.frequency = frequency;
     }
 }

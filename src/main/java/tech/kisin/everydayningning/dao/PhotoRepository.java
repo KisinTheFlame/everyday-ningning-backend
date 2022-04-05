@@ -8,4 +8,5 @@ public interface PhotoRepository {
     int count();
 
     PhotoPO findByIndex(long index);
+    void countUpFrequency(long id);
 }
