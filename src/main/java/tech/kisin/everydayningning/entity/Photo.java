@@ -1,4 +1,4 @@
-package tech.kisin.everydayningning.dataobject;
+package tech.kisin.everydayningning.entity;
 
 public class Photo {
     String filename;

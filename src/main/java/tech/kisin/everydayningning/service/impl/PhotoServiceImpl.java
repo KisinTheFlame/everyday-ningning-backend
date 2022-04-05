@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import tech.kisin.everydayningning.dao.PhotoRepository;
-import tech.kisin.everydayningning.dataobject.Photo;
+import tech.kisin.everydayningning.entity.Photo;
 import tech.kisin.everydayningning.po.PhotoPO;
 import tech.kisin.everydayningning.service.PhotoService;
 
