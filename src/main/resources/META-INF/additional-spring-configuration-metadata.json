@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "ningning.least-non-duplicated-size",
+      "type": "java.lang.Integer",
+      "description": "to avoid."
+    }
+  ]
+}
