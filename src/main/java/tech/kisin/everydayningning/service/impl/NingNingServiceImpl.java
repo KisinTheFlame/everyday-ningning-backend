@@ -32,7 +32,7 @@ public class NingNingServiceImpl implements NingNingService {
     }
 
     @Override
-    public List<String> getMusicFilenameList() {
+    public List<String> getMusicList() {
         return musicService.getMusicList();
     }
 
@@ -41,7 +41,7 @@ public class NingNingServiceImpl implements NingNingService {
         return musicService
                 .getMusicByKeyword(keyword)
                 .stream()
-                .map(music -> new MusicDTO(music.getFilename(), music.getFrequency()))
+                .map(music -> new MusicDTO(music.getFilename(), music.getDescription()))
                 .collect(Collectors.toList());
     }
 }

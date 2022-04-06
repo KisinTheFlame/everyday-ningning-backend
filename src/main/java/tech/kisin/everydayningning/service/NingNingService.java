@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface NingNingService {
     PhotoDTO getRandomPhoto();
-    List<String> getMusicFilenameList();
+    List<String> getMusicList();
     List<MusicDTO> getMusicListWithKeyword(String keyword);
 }

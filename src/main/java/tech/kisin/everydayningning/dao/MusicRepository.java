@@ -7,9 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface MusicRepository {
-    List<String> getAllFilename();
+    List<String> getAllDescription();
 
     List<MusicPO> getByKeywordInexactly(String keyword);
-
-    void countUpFrequency(long id);
 }

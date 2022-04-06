@@ -19,7 +19,7 @@ public class MusicServiceImpl implements MusicService {
 
     @Override
     public List<String> getMusicList() {
-        return musicRepository.getAllFilename();
+        return musicRepository.getAllDescription();
     }
 
     @Override
@@ -27,12 +27,7 @@ public class MusicServiceImpl implements MusicService {
         return musicRepository
                 .getByKeywordInexactly(keyword)
                 .stream()
-                .map(musicPO -> new Music(musicPO.getFilename(), musicPO.getFrequency()))
+                .map(musicPO -> new Music(musicPO.getFilename(), musicPO.getDescription()))
                 .collect(Collectors.toList());
-    }
-
-    @Override
-    public void countUpFrequency(long id) {
-        musicRepository.countUpFrequency(id);
     }
 }

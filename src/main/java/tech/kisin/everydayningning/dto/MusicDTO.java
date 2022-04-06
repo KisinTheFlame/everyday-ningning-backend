@@ -2,18 +2,18 @@ package tech.kisin.everydayningning.dto;
 
 public class MusicDTO {
     private final String filename;
-    private final int frequency;
+    private final String description;
 
-    public MusicDTO(String filename, int frequency) {
+    public MusicDTO(String filename, String description) {
         this.filename = filename;
-        this.frequency = frequency;
+        this.description = description;
     }
 
     public String getFilename() {
         return filename;
     }
 
-    public int getFrequency() {
-        return frequency;
+    public String getDescription() {
+        return description;
     }
 }

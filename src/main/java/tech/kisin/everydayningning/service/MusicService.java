@@ -7,5 +7,4 @@ import java.util.List;
 public interface MusicService {
     List<String> getMusicList();
     List<Music> getMusicByKeyword(String keyword);
-    void countUpFrequency(long id);
 }

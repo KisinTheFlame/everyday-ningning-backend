@@ -2,11 +2,11 @@ package tech.kisin.everydayningning.entity;
 
 public class Music {
     private String filename;
-    private int frequency;
+    private String description;
 
-    public Music(String filename, int frequency) {
+    public Music(String filename, String description) {
         this.filename = filename;
-        this.frequency = frequency;
+        this.description = description;
     }
 
     public String getFilename() {
@@ -17,11 +17,11 @@ public class Music {
         this.filename = filename;
     }
 
-    public int getFrequency() {
-        return frequency;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFrequency(int frequency) {
-        this.frequency = frequency;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

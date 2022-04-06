@@ -3,12 +3,12 @@ package tech.kisin.everydayningning.po;
 public class MusicPO {
     private final long id;
     private String filename;
-    private int frequency;
+    private String description;
 
-    public MusicPO(long id, String filename, int frequency) {
+    public MusicPO(long id, String filename, String description) {
         this.id = id;
         this.filename = filename;
-        this.frequency = frequency;
+        this.description = description;
     }
 
     public long getId() {
@@ -23,11 +23,11 @@ public class MusicPO {
         this.filename = filename;
     }
 
-    public int getFrequency() {
-        return frequency;
+    public String getDescription() {
+        return description;
     }
 
-    public void setFrequency(int frequency) {
-        this.frequency = frequency;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

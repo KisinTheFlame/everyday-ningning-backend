@@ -24,7 +24,7 @@ public class NingNingController {
 
     @PostMapping(value = "/get-music-list")
     public List<String> getMusicList() {
-        return service.getMusicFilenameList();
+        return service.getMusicList();
     }
 
     @PostMapping(value = "/get-music-list-with-keyword")
