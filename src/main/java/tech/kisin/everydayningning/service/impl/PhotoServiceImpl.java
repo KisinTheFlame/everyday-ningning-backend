@@ -44,8 +44,7 @@ public class PhotoServiceImpl implements PhotoService {
         }
         idList.add(photoPO.getId());
         photoRepository.countUpFrequency(photoPO.getId());
-        photoPO.setFrequency(photoPO.getFrequency() + 1);
         logger.info("Retrieving photo with id=" + photoPO.getId() + ".");
-        return new Photo(photoPO.getFilename(), photoPO.getDescription(), photoPO.getFrequency());
+        return new Photo(photoPO.getFilename(), photoPO.getDescription(), photoPO.getFrequency() + 1);
     }
 }
