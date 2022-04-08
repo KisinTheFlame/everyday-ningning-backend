@@ -22,7 +22,13 @@ public class NingNingController {
         return service.getRandomPhoto();
     }
 
+    @PostMapping(value = "/get-photo-list")
+    public List<PhotoDTO> getPhotoList() {
+        return service.getPhotoList();
+    }
+
     @PostMapping(value = "/get-music-list")
+
     public List<String> getMusicList() {
         return service.getMusicList();
     }

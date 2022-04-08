@@ -10,8 +10,10 @@ import tech.kisin.everydayningning.po.PhotoPO;
 import tech.kisin.everydayningning.service.PhotoService;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 @Service
 public class PhotoServiceImpl implements PhotoService {
@@ -39,12 +41,21 @@ public class PhotoServiceImpl implements PhotoService {
             index = random.nextInt(count);
             photoPO = photoRepository.findByIndex(index);
         }
-        if(idList.size() == listMaxSize) {
+        if (idList.size() == listMaxSize) {
             idList.removeFirst();
         }
         idList.add(photoPO.getId());
         photoRepository.countUpFrequency(photoPO.getId());
         logger.info("Retrieving photo with id=" + photoPO.getId() + ".");
         return new Photo(photoPO.getFilename(), photoPO.getDescription(), photoPO.getFrequency() + 1);
+    }
+
+    @Override
+    public List<Photo> getPhotoList() {
+        return photoRepository
+                .getAll()
+                .stream()
+                .map(photoPO -> new Photo(photoPO.getFilename(), photoPO.getDescription(), photoPO.getFrequency()))
+                .collect(Collectors.toList());
     }
 }

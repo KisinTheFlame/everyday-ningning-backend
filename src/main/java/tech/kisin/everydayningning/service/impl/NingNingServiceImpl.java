@@ -9,13 +9,10 @@ import tech.kisin.everydayningning.service.NingNingService;
 import tech.kisin.everydayningning.service.PhotoService;
 
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
 public class NingNingServiceImpl implements NingNingService {
-
-    private final Random random = new Random();
 
     private final PhotoService photoService;
     private final MusicService musicService;
@@ -29,6 +26,15 @@ public class NingNingServiceImpl implements NingNingService {
     public PhotoDTO getRandomPhoto() {
         Photo photo = photoService.getRandomPhoto();
         return new PhotoDTO(photo.getFilename(), photo.getDescription(), photo.getFrequency());
+    }
+
+    @Override
+    public List<PhotoDTO> getPhotoList() {
+        return photoService
+                .getPhotoList()
+                .stream()
+                .map(photo -> new PhotoDTO(photo.getFilename(), photo.getDescription(), photo.getFrequency()))
+                .collect(Collectors.toList());
     }
 
     @Override

@@ -10,10 +10,13 @@
         FROM photo
         LIMIT #{index}, 1
     </select>
+    <select id="getAll" resultType="PhotoPO">
+        SELECT *
+        FROM photo
+    </select>
     <update id="countUpFrequency">
         UPDATE photo
         SET frequency = frequency + 1
         WHERE id = #{id}
     </update>
-
 </mapper>
